@@ -1,0 +1,42 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-progress-indeterminate {
+    width: 100%;
+    animation: progress-indeterminate 1.5s infinite linear;
+    transform-origin: 0% 50%;
+  }
+
+  @keyframes progress-indeterminate {
+    0% { transform: translateX(-100%) scaleX(0.2); }
+    50% { transform: translateX(0%) scaleX(0.5); }
+    100% { transform: translateX(100%) scaleX(0.2); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .markdown-body {
+    @apply text-slate-800 leading-relaxed;
+  }
+  .markdown-body h1 { @apply text-2xl font-black mb-6 mt-8 text-slate-900 uppercase border-b-2 border-slate-100 pb-2; }
+  .markdown-body h2 { @apply text-xl font-black mb-4 mt-6 text-slate-800 uppercase; }
+  .markdown-body h3 { @apply text-lg font-bold mb-3 mt-5 text-slate-700; }
+  .markdown-body p { @apply mb-4; }
+  .markdown-body ul { @apply list-disc pl-6 mb-4 space-y-2; }
+  .markdown-body ol { @apply list-decimal pl-6 mb-4 space-y-2; }
+  .markdown-body table { @apply w-full border-collapse; }
+  .markdown-body th { @apply bg-slate-50 border border-slate-200 p-3 text-left text-xs font-black uppercase text-slate-600; }
+  .markdown-body td { @apply border border-slate-200 p-3 text-sm text-slate-600; }
+  .markdown-body blockquote { @apply border-l-4 border-emerald-500 pl-4 italic my-4 text-slate-500; }
+  .markdown-body strong { @apply font-black text-slate-900; }
+}
